@@ -1,0 +1,69 @@
+
+<!-- main menu -->
+
+<nav class="navbar navbar-inverse">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="#" style="width: 70px;"><img src="/images/active_chat_log.png" style="position:absolute; top: 5px;"></a>
+    </div>
+    <div class="collapse navbar-collapse" id="myNavbar">
+      <ul class="nav navbar-nav">
+        <li id="li_home"><a href="/">Home</a></li>
+        <li id="li_managecustomers"><a href="/managecustomers">Customers</a></li>
+        <li id="li_managevessels"><a href="/managevessels">Vessels</a></li>
+        <li id="li_managevesselmap"><a href="/managevesselmap">Vessels Map</a></li>
+        <li id="li_manageportnmmap"><a href="/manageportnmmap">Port Map</a></li>
+        <li id="li_managescraper"><a href="/managescraper">Scraper</a></li>
+        <li id="li_consultinglist"><a href="/consultinglist">Consulting</a></li>
+        <li id="li_chat"><a href="/chat">Chatting</a></li>
+        <li id="li_managecustomerquerys"><a href="/managecustomerquery">Q&A</a></li>
+        <li id="li_manageerrorreports"><a href="/manageerrorreport">Error Report</a></li>
+      </ul>
+      <ul class="nav navbar-nav navbar-right">
+        <% if (isAuthenticated) { %>
+            <li>
+            <a href="#"><%- partial('partials/user-loggedin-username') %></a>
+            </li>
+        <% } %>
+        <li>
+            <% if (isAuthenticated) { %>
+                <%- partial('partials/user-loggedin') %>
+            <% } else { %>
+                <%- partial('partials/user-loggedout') %>
+            <% } %>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+<script>
+  var path = window.location.pathname;
+  console.log(path);
+  if (path == '/') {
+    $('#li_home').attr('class', 'active');
+  } else if (path == '/managecustomers') {
+    $('#li_managecustomers').attr('class', 'active');
+  } else if (path == '/managevessels') {
+    $('#li_managevessels').attr('class', 'active');
+  } else if (path == '/managevesselmap') {
+    $('#li_managevesselmap').attr('class', 'active');
+  } else if (path == '/manageportnmmap') {
+    $('#li_manageportnmmap').attr('class', 'active');
+  } else if (path == '/managescraper') {
+    $('#li_managescraper').attr('class', 'active');
+  } else if (path == '/consultinglist') {
+    $('#li_consultinglist').attr('class', 'active');
+  } else if (path == '/chat') {
+    $('#li_chat').attr('class', 'active');
+  } else if (path == '/managecustomerquerys') {
+    $('#li_managecustomerquerys').attr('class', 'active');
+  } else if (path == '/manageerrorreports') {
+    $('#li_manageerrorreports').attr('class', 'active');
+  }
+</script>

@@ -1,0 +1,8 @@
+.box-content {
+	position: inherit;
+}
+
+.form-actions {
+	padding: 10px;
+	margin: 20px -10px -10px -10px;
+}

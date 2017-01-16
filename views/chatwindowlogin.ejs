@@ -1,0 +1,40 @@
+
+<link href="/css/lifemagazine.chat.css" rel="stylesheet">
+
+<script>
+  // var targetRoute = '<%= targetRoute %>';
+  // var roomName = '<%= roomName %>';
+  var webChatAddress = '<%= webChatAddress %>';
+  console.log('targetRoute: ' + targetRoute + ', roomName: ' + roomName + ', webChatAddress: ' + webChatAddress);
+
+
+  $(function() {
+
+    //$( ".lifemagazine-chat-modal" ).draggable();
+
+    $(".lifemagazine-chat-inactive-bar").click(function() {
+      $('.lifemagazine-chat-inactive-bar').hide();
+      $('.lifemagazine-chat-modal').show("slow", function() {
+
+      });
+    });
+
+    $("#closechating").click(function() {
+      $('.lifemagazine-chat-modal').hide();
+      $('.lifemagazine-chat-inactive-bar').show("slow", function() {
+
+      });
+    });
+
+  });
+
+</script>
+
+<div id="lifemagazine_chat" class="lifemagazine-chat-modal" style="display: block;"></div>
+<div id="lifemagazine_msg_header" style="display: none;"></div>
+<div id="lifemagazine_msg_body" style="display: none;"></div>
+
+<script src="/js/jquery-ui.min.js"></script>
+<script type="text/javascript" src="/js/models_guest.js"></script>
+<script type="text/javascript" src="/js/components_guest.js"></script>
+<script type="text/javascript" src="/js/chat_guest.js"></script>

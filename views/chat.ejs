@@ -1,0 +1,67 @@
+<!-- <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+<script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script> -->
+<link rel="stylesheet" href="/css/bootstrap.min.css">
+<script src="/js/bootstrap.min.js"></script>
+<!-- <link rel="stylesheet" href="//code.jquery.com/ui/1.12.0/themes/base/jquery-ui.css">
+<script src="https://code.jquery.com/ui/1.12.0/jquery-ui.js"></script> -->
+<link rel="stylesheet" href="/css/jquery-ui.css">
+<script src="/js/jquery-ui.js"></script>
+<style>
+body {
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+table {
+  font-size: 1em;
+}
+
+.ui-draggable, .ui-droppable {
+  background-position: top;
+}
+</style>
+<script>
+  var webChatAddress = '<%= webChatAddress %>';
+  console.log('webChatAddress: ' + webChatAddress);
+  var userid = '<%= user.id %>';
+</script>
+
+
+<%- partial('menu/menu') %>
+
+<div class="container-fluid text-center">
+  <div class="row content">
+    <div class="col-sm-4"  id="react-root">
+      <script type="text/javascript" src="/js/models.js"></script>
+      <script type="text/javascript" src="/js/components.js"></script>
+      <script type="text/javascript" src="/js/chat.js"></script>
+    </div>
+
+    <div class="col-sm-6 text-left">
+      <div class="jumbotron">
+        <h1>Chatting Dashboard</h1>
+        <br>
+        <p id="chat_p_access_count">현재 접속자 숫자 : 0</p>
+        <p id="chat_p_login_count">현재 로그인 숫자 : 0</p>
+        <p id="chat_p_chatting_count">현재 채팅접속 숫자 : 0</p>
+        <p id="chat_p_consultant_count">현재 관리자 접속 숫자 : 0</p>
+      </div>
+    </div>
+
+    <div class="col-sm-2 sidenav">
+      <div class="well">
+        <p>ADS</p>
+      </div>
+      <div class="well">
+        <p>ADS</p>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<div id="dialog-confirm" title="채팅룸 메뉴">
+</div>
+
+<footer class="container-fluid text-center">
+  <p>Management Business Support System</p>
+</footer>

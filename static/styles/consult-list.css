@@ -1,0 +1,121 @@
+#tblResult tr th,
+#tblResult tr td {
+	text-align: center;
+}
+
+#tblResult tr th:first-child {
+	width: 220px;
+}
+
+#tblResult tr th:nth-of-type(2) {
+	width: 85px;
+}
+
+#tblResult tr th:nth-of-type(3) {
+	width: 140px;
+}
+
+#tblResult tr th:nth-of-type(4) {
+	width: 125px;
+}
+
+#tblResult tr th:nth-of-type(5) {
+	width: 180px;
+}
+
+#tblResult tr th:nth-of-type(6) {
+	width: 210px;
+}
+
+#tblResult tr th:nth-of-type(7) {
+	width: 440px;
+}
+
+#tblResult tr th:nth-of-type(8) {
+	width: 440px;
+}
+
+#tblResult tr th:nth-of-type(9) {
+	width: 140px;
+}
+
+#tblResult tr th:nth-of-type(10) {
+	width: 80px;
+}
+
+#tblResult tr th:nth-of-type(11) {
+	width: 115px;
+}
+
+#tblResult tr th:nth-of-type(12) {
+	width: 115px;
+}
+
+.table-striped tbody>tr:nth-child(odd)>td, .table-striped tbody>tr:nth-child(odd)>th {
+	background-color: initial;
+}
+
+.table-striped tbody>tr:nth-child(odd) {
+	background-color: #f9f9f9;
+}
+
+.table-striped tbody>tr:nth-child(odd):hover,
+.table-striped tbody>tr:nth-child(even):hover {
+	background-color: #e0e0e0;
+	cursor: pointer;
+}
+
+#excelDropBox {
+	width: 300px;
+	height: 96px;
+	border: 3px dashed #578EBE;
+	display: inline-block;
+	margin-left: 10px;
+	margin-right: 10px;
+	padding: 15px;
+}
+
+#excelDropBox.hover {
+	border: 3px dashed #ff0000;
+} 
+
+div.uploader {
+	width: 310px;
+}
+div.uploader span.filename {
+	width: 223px;
+}
+
+div.uploader input {
+	width: 298px;
+}
+
+#excelDropBox {
+	width: 310px;
+}
+
+#quotCsts select{
+	width: 67px;
+}
+
+#quotCsts select{
+	width: 67px;
+}
+
+#quotCsts tr.sub_total {
+	background-color: #e5e5e5;
+	font-weight: bold;
+}
+
+#quotCsts tr.total {
+	background-color: #ccc;
+	font-weight: bold;
+}
+
+.wrap_cnsltn_mgnt {
+	position: relative;
+}
+
+textarea.quot_comment {
+	width: 870px;
+}

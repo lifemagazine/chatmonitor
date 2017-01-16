@@ -1,0 +1,57 @@
+
+<link href="/css/lifemagazine.chat.css" rel="stylesheet">
+
+<script>
+  $(function() {
+
+    $( ".lifemagazine-chat-modal" ).draggable();
+
+    $(".lifemagazine-chat-inactive-bar").click(function() {
+      $('.lifemagazine-chat-inactive-bar').hide();
+      $('.lifemagazine-chat-modal').show("slow", function() {
+
+      });
+    });
+
+    $("#closechating").click(function() {
+      $('.lifemagazine-chat-modal').hide();
+      $('.lifemagazine-chat-inactive-bar').show("slow", function() {
+
+      });
+    });
+
+  });
+
+</script>
+
+<div class="container" style="position:relative;width:1400px; height:100%; background-image:url('images/main.png');">
+
+<div style="position:absolute;bottom:0; right:0; width:300px; font-size: 0.85em">
+
+    <div style="position:relative;">
+
+        <div id="inacviebutton">
+
+            <!-- <div id="myModal" class="lifemagazine-chat-modal"> -->
+            <div id="react-root" class="lifemagazine-chat-modal"></div>
+                <script src="/js/jquery-ui.min.js"></script>
+                <script type="text/javascript" src="/js/models.js"></script>
+                <script type="text/javascript" src="/js/components_guest.js"></script>
+                <script type="text/javascript" src="/js/chat_window.js"></script>
+
+            <div class="lifemagazine-chat-inactive-bar">
+              <div class="lifemagazine-chat-inactive-bar-title">
+                트래드링스
+              </div>
+              <div class="lifemagazine-chat-inactive-bar-msg">
+                실시간 상담이 가능합니다.
+              </div>
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+
+</div>
