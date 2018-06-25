@@ -65,7 +65,7 @@ app.get(config.routes.chat, [util.requireAuthentication], routes.chat);
 app.get(config.routes.chatwindowadmin, [util.requireAuthentication], routes.chatwindowadmin);
 // app.get(config.routes.chatwindowlogin,routes.chatwindowlogin);
 app.get(config.routes.msgwindow, routes.msgwindow);
-// app.get(config.routes.checkconsultantcount, routes.checkconsultantcount);
+app.get(config.routes.checkconsultantcount, routes.checkconsultantcount);
 app.post(config.routes.removechattingroom, [util.requireAuthentication], routes.removechattingroom)
 
 app.get(config.routes.consultinglist, [util.requireAuthentication], routes.consultinglist);
