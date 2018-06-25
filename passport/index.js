@@ -1,10 +1,12 @@
 var passport = require('passport'),
 	local = require('passport-local').Strategy,
+	passwordUtils = require('./password'),
+	user = require('./user'),
 	config = require('../config'),
 	log = require('../middleware/log');
 
 passport.use(new local(function(username, password, done) {
-	// console.log('username: ' + username + ', password: ' + password);
+	console.log('username: ' + username + ', password: ' + password);
 	user.findByUsername(username, function(err, profile) {
 		if(profile) {
 			passwordUtils.passwordCheck(password, profile.password, profile.salt, profile.work, function(err,isAuth) {

@@ -8,6 +8,7 @@ WebChat.Chat = function(el) {
   me = null,
   connected = false,
   lastModifyTime = 0;
+
   //to be initialized
   var router,
     roomsCollection,
@@ -15,6 +16,7 @@ WebChat.Chat = function(el) {
     chatCollection;
 
   var GetMe = function GetMe(user) {
+    console.log(user);
     me = new User(user);
     Backbone.history.stop();
     startChat(me);
@@ -34,6 +36,7 @@ WebChat.Chat = function(el) {
   };
 
   socket.on('connect', function() {
+    console.log('socket connected...');
     if (!connected) socket.emit('GetMe');
   });
   socket.on('GetMe', GetMe);

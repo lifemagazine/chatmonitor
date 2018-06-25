@@ -53,28 +53,31 @@ app.use(util.templateRoutes);
 //routes
 app.get('/', [util.requireAuthentication], routes.index);
 app.get(config.routes.checksession, routes.checksession);
+
 app.post(config.routes.secondlogin, routes.secondlogin);
+// app.post(config.routes.login, passport.authenticate('local', {successRedirect: '/chat', failureRedirect: config.routes.login, failureFlash: true}));
+
 app.get(config.routes.login, routes.login);
 app.get(config.routes.logout, routes.logOut);
-app.get(config.routes.register, routes.register);
-app.post(config.routes.register, routes.registerProcess);
+// app.get(config.routes.register, routes.register);
+// app.post(config.routes.register, routes.registerProcess);
 app.get(config.routes.chat, [util.requireAuthentication], routes.chat);
 app.get(config.routes.chatwindowadmin, [util.requireAuthentication], routes.chatwindowadmin);
 // app.get(config.routes.chatwindowlogin,routes.chatwindowlogin);
 app.get(config.routes.msgwindow, routes.msgwindow);
-app.get(config.routes.checkconsultantcount, routes.checkconsultantcount);
+// app.get(config.routes.checkconsultantcount, routes.checkconsultantcount);
 app.post(config.routes.removechattingroom, [util.requireAuthentication], routes.removechattingroom)
 
 app.get(config.routes.consultinglist, [util.requireAuthentication], routes.consultinglist);
 app.get(config.routes.consultingmodify, [util.requireAuthentication], routes.consultingmodify);
 
-app.post(config.routes.uploadfile, [util.requireAuthentication], multer({dest: './public/uploads/'}).single('upl'), routes.uploadfile);
+// app.post(config.routes.uploadfile, [util.requireAuthentication], multer({dest: './public/uploads/'}).single('upl'), routes.uploadfile);
 // app.post(config.routes.inquiry, routes.inquiry);
 // app.post(config.routes.errorreport, routes.errorreport);
 app.get(config.routes.chatwindow,routes.chatwindow);
 
-app.get(config.routes.testpage, routes.testpage);
-app.post(config.routes.posttest, routes.posttest);
+//app.get(config.routes.test, routes.test);
+// app.post(config.routes.posttest, routes.posttest);
 
 app.get('/error', function(req, res, next){
 	next(new Error('A contrived error'));

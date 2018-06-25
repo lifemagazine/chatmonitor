@@ -9,7 +9,7 @@ $('#btnLogin').click(function() {
 	var userPswd = document.getElementById('password').value;
 	var remember = document.getElementById('remember').checked;
 
-	var requestBody = {
+	/*var requestBody = {
 		url : apiServerUrl + 'login',
 		method : 'GET',
 		data : {
@@ -29,7 +29,8 @@ $('#btnLogin').click(function() {
 				notifySession2server(userId, 99);
 			}
 		}
-	);
+	);*/
+	notifySession2server(userId, 99);
 });
 
 

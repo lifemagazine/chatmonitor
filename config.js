@@ -15,12 +15,14 @@ var config = {
                 chatwindowadmin: '/chatwindowadmin',
                 uploadfile: '/uploadfile',
                 removechattingroom: '/removechattingroom',
-
+                secondlogin: '/secondlogin',
+                checksession: '/checksession',
                 consultinglist: '/consultinglist',
                 consultingmodify: '/consultingmodify',
+                test: '/test',
         },
-        host: 'http://test.lifemagazine.com',
-        webChatAddress: 'http://test.lifemagazine.com/webchat',
+        host: 'http://127.0.0.1:8080',
+        webChatAddress: 'http://127.0.0.1:8080/webchat',
         crypto: {
                 workFactor: 5000,
                 keylen: 32,
@@ -41,4 +43,4 @@ var config = {
 };
 
 module.exports = config;
-module.exports.pool = pool;
+// module.exports.pool = pool;

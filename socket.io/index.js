@@ -24,12 +24,15 @@ var socketAuth = function socketAuth(socket, next) {
 	try {
 		parsedCookie = cookie.parse(handshakeData.headers.cookie);
 		sid = cookieParser.signedCookie(parsedCookie['connect.sid'], config.secret);
+		// sid = JSON.stringify(req.signedCookies);
+		console.log('sid = ' + sid);
 	} catch (e) {
+		console.log(e);
 		return next(new Error('Not Authenticated'));
 	}
 	//console.log('sid = ' + sid);
 	if (parsedCookie['connect.sid'] === sid) {
-		// console.log('Not Authenticated - '+ sid);
+		console.log('Not Authenticated - '+ sid);
 		return next(new Error('Not Authenticated'));
 	}
 
@@ -358,6 +361,7 @@ var webEventSocketConnection = function webEventSocketConnection(socket) {
 };
 
 exports.startIo = function startIo(server) {
+	console.log('begin startIo ~~~');
 	io = io.listen(server);
 
 	io.adapter(redisAdapter({host: config.redisHost, port: config.redisPort}));
