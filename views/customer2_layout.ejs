@@ -1,0 +1,74 @@
+
+<html>
+<head>
+    <title><%= title %></title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <link rel="stylesheet" href="/css/style.css">
+<script>
+(function() {
+    var method;
+    var noop = function () {};
+    var methods = [
+        'assert', 'clear', 'count', 'debug', 'dir', 'dirxml', 'error',
+        'exception', 'group', 'groupCollapsed', 'groupEnd', 'info', 'log',
+        'markTimeline', 'profile', 'profileEnd', 'table', 'time', 'timeEnd',
+        'timeStamp', 'trace', 'warn'
+    ];
+    var length = methods.length;
+    var console = (window.console = window.console || {});
+
+    while (length--) {
+        method = methods[length];
+
+        // Only stub undefined methods.
+        if (!console[method]) {
+            console[method] = noop;
+        }
+    }
+}());
+
+        var console = window.console || {log:function(){}};
+
+        var isActive;
+
+        window.onfocus = function () {
+          isActive = true;
+        };
+
+        window.onblur = function () {
+          isActive = false;
+        };
+
+        function notifyChatMessage() {
+            if (window.isActive) {
+                console.log('Notification event skip!');
+                return;
+            }
+
+            var msg = '새로운 메세지가 도착하였습니다.';
+            parent.postMessage('newMsg', '*');
+        }
+
+        function notifyRoomEvent(rooms) {
+
+        }
+
+</script>
+
+<script type="text/javascript" src="/js/jquery.1.12.3.js"></script>
+
+<script type="text/javascript" src="/js/es5-shim.js"></script>
+<script type="text/javascript" src="/js/es5-sham.js"></script>
+<script type="text/javascript" src="/js/html5shiv.js"></script>
+<script type="text/javascript" src="/react/react.js"></script>
+
+<script type="text/javascript" src="/underscore/underscore.js"></script>
+<script type="text/javascript" src="/backbone/backbone.js"></script>
+
+</head>
+<body>
+
+    <%- body %>
+
+</body>
+</html>
