@@ -29,7 +29,9 @@ if (window.addEventListener) {
 
 function listener(event) {
   if (event.origin !== webchatutility.parentAddress) {
-    console.log("invalid event received: "+event.data);
+    console.log(event.origin);
+    console.log(webchatutility.parentAddress);
+    console.log("invalid event received: " + event.data);
   } else {
     console.log("received: "+event.data);
     if (!WebChatConfig.JoinRoomFlag) {
