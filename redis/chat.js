@@ -34,7 +34,7 @@ exports.addChat = function addChat(chat){
   .zadd('rooms', (new Date).getTime(), chat.room)
   .exec();
 
-addChatMsg(chat);
+// addChatMsg(chat);
 };
 
 exports.getChat = function getChat(room, cb){
