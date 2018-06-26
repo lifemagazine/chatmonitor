@@ -22,8 +22,8 @@ var config = {
                 consultingmodify: '/consultingmodify',
                 test: '/test',
         },
-        host: 'http://192.168.2.131:8080',
-        webChatAddress: 'http://192.168.2.131:8080/webchat',
+        host: 'http://www.webmsg.com:8080',
+        webChatAddress: 'http://www.webmsg.com:8080/webchat',
         crypto: {
                 workFactor: 5000,
                 keylen: 32,
