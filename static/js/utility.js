@@ -9,7 +9,7 @@ var webchatutility = {
   format_am_pm: null,
   // for send event to parent window
   // parentAddress: "http://www.lifemagazine.com"
-  parentAddress: "http://demo.webmsg.com"
+  parentAddress: "http://demo.webmsg.com:8888"
   // parentAddress: "http://192.168.1.23"
 };
 
