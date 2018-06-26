@@ -160,6 +160,8 @@ var webChatSocketConnection = function webChatSocketConnection(socket, eventSock
 		// console.log(chat);
 		var newChat = models.Chat(chat.message, chat.contentLength, chat.room,
 			models.User(socket.request.user.id, socket.request.user.displayName, socket.request.user.provider, chat.room, socket.request.user.role));
+		console.log('************************');
+		console.log(newChat);
 		redisChat.addChat(newChat);
 		socket.broadcast.to(chat.room).emit('AddChat', newChat);
 		io.of(nameSpaceInnerChat).emit('AddChat', newChat);
