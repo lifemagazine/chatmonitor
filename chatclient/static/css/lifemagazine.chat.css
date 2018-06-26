@@ -1,0 +1,580 @@
+
+html {  overflow: hidden;}
+html, body { width: 100%; height: 100%; margin: 0; padding: 0;}
+#wrapper{  width: 100%; height: 100%; position: absolute; overflow-y:scroll;}
+
+.lifemagazine-chat-rooms-title {
+    padding-top: 10px;
+    font-weight: bold;
+    font-size: 100%;
+}
+
+.lifemagazine-chat-rooms-panel {
+    margin:5px;
+    padding: 10px;
+    width:180px;
+    height: 600px;
+    -webkit-border-radius: 10px;
+    -moz-border-radius: 10px;
+}
+
+.inacviebutton {
+    position: relative;
+    bottom: 0;
+    right: 0px;
+    width:302px;
+    z-index: 999;
+}
+
+.lifemagazine-chat-modal {
+    /*position: relative;
+    display: none;
+    bottom: 0px;
+    right: 4px;
+    width:300px;
+    height:473px;
+    margin-left:0px;
+    z-index: 1000;*/
+    margin: 0px;
+    padding-top: 0px;
+    z-index: 1000;
+}
+
+.lifemagazine-chat-panel {
+    /*bottom: 0px;
+    right: 0px;
+    width:300px;
+    height:473px;
+    margin:0px;*/
+}
+
+.lifemagazine-chat-header {
+    width : 314px; height : 34px; background : #ffffff; top : 0px; left : 0px; margin: 0px ; position : absolute;
+    border-top: 1px solid grey;
+    border-left: 1px solid grey;
+    border-right: 1px solid grey;
+    -webkit-border-top-left-radius: 5px;
+    -webkit-border-top-right-radius: 5px;
+    -moz-border-top-left-radius: 5px;
+    -moz-border-top-right-radius: 5px;
+    background-color: #00a6f3;
+    border-color: #bbbbbb;
+}
+.lifemagazine-chat-header-title1 {
+    position:absolute; left:40px; top:6px; /*font-weight: bold; font-size: 90%;*/
+    font: 12px 나눔고딕; font-weight: bold; color: #ffffff;
+}
+.lifemagazine-chat-header-title2 {
+    position:absolute; left:60px; top:30px; /*font-size: 80%; color:grey;*/
+    font: 14px 나눔고딕; font-weight: bold; color: #ffffff;
+}
+.lifemagazine-chat-body-top {
+    width : 314px; height : 19px; background : #ffffff; top : 34px; left : 0px; margin: 0px ; position : absolute;
+    border-left: 1px solid #bbbbbb;
+    border-right: 1px solid #bbbbbb;
+    font: 11px sans-serif; color: #a7b7c2;
+}
+/*.lifemagazine-chat-body-left {
+    width : 10px; height : 343px; background : #ffffff; top : 34px; left : 0px; margin: 0px ; position : absolute;
+    border-left: 1px solid #bbbbbb;
+    border-right: 1px solid white;
+    border-bottom: 1px solid #bbbbbb;
+}*/
+.lifemagazine-chat-body-center {
+    width : 314px; height : 343px; background : #ffffff; top : 34px; left : 0px; margin: 0px ; position : absolute;
+    border-left: 1px solid white;
+    border-right: 1px solid #bbbbbb;
+    border-bottom: 1px solid #bbbbbb;
+    overflow-y:scroll;
+    overflow-x: hidden;
+}
+.lifemagazine-chat-body-center-top-dummy {
+    height: 19px;
+    font: 11px sans-serif; color: #a7b7c2;
+}
+.lifemagazine-chat-footer {
+    width : 314px; height : 74px; background : #ffffff; top : 376px; left : 0px; margin: 0px ; overflow:auto; position : absolute;
+    border-left: 1px solid #ffffff;
+    border-right: 1px solid #ffffff;
+    border-top: 1px solid #cfd5d9;
+}
+.lifemagazine-chat-footer-input {
+    position: absolute; left:10px; top:9px; height: 46px; width: 290px;
+    -webkit-border-radius: 2px;
+    -moz-border-radius: 2px;
+    border: 1px solid #e5e8ea;
+    font-size: 12px;
+    resize:none;
+   overflow: auto;
+}
+.lifemagazine-chat-footer-bottom {
+    width : 314px; height : 10px; background : #ffffff; top : 440px; left : 0px; margin: 0px ; overflow:auto; position : absolute;
+    border-left: 1px solid #ffffff;
+    border-right: 1px solid #ffffff;
+    border-bottom: 1px solid #ffffff;
+    /*-webkit-border-bottom-left-radius: 4px;
+    -webkit-border-bottom-right-radius: 4px;
+    -moz-border-bottom-left-radius: 4px;
+    -moz-border-bottom-right-radius: 4px;*/
+}
+
+
+
+/*.lifemagazine-guestchat-body-left {
+    width : 10px; height : 343px; background : #ffffff; top : 0px; left : 0px; margin: 0px ; position : absolute;
+    border-left: 1px solid #bbbbbb;
+    border-right: 1px solid white;
+    border-bottom: 1px solid #bbbbbb;
+}*/
+.lifemagazine-guestchat-body-center {
+    width : 314px; height : 343px; background : #ffffff; top : 0px; left : 0px; margin: 0px ; position : absolute;
+    border-left: 1px solid white;
+    border-right: 1px solid #bbbbbb;
+    border-bottom: 1px solid #bbbbbb;
+    overflow-y:scroll;
+    overflow-x: hidden;
+}
+.lifemagazine-guestchat-body-center-top-dummy {
+    height: 19px;
+    font: 11px sans-serif; color: #a7b7c2;
+}
+.lifemagazine-guestchat-footer {
+    width : 314px; height : 74px; background : #ffffff; top : 343px; left : 0px; margin: 0px ; overflow:auto; position : absolute;
+/*    border-left: 1px solid #bbbbbb;
+    border-right: 1px solid #bbbbbb;*/
+    border-top: 1px solid #bbbbbb;
+}
+.lifemagazine-guestchat-footer-bottom {
+    width : 314px; height : 10px; background : #ffffff; top : 417px; left : 0px; margin: 0px ; overflow:auto; position : absolute;
+    border-left: 1px solid #bbbbbb;
+    border-right: 1px solid #bbbbbb;
+    border-bottom: 1px solid #bbbbbb;
+    background-color: #f3fbfe;
+    -webkit-border-bottom-left-radius: 5px;
+    -webkit-border-bottom-right-radius: 5px;
+    -moz-border-bottom-left-radius: 5px;
+    -moz-border-bottom-right-radius: 5px;
+}
+
+
+
+
+.lifemagazine-chat-inactive-bar {
+    background-image: url('/images/chat_inactive_bar.png');
+    width: 210px;
+    height: 50px;
+    left: 0px;
+    bottom: 0px;
+    cursor: pointer;
+}
+.lifemagazine-chat-inactive-bar-title {
+    position:absolute; left:50px; top:8px;
+    font-weight: bold; font-size: 100%; color: #ffffff;
+}
+.lifemagazine-chat-inactive-bar-msg {
+    position:absolute; left:50px; top:25px;
+    font-size: 85%; color: #bbbbbb;
+}
+
+.lifemagazine-chat-ul-row {
+    margin: 0px;
+    padding: 0px;
+}
+.lifemagazine-chat-row { width : 283px; height : 100px; background : #ffffff; margin: 0px ; padding: 0px; position : relative;}
+.lifemagazine-chat-row-left { width : 250px; height : 100px; background : #ffffff; top : 0px; left : 10px; position : absolute;}
+.lifemagazine-chat-row-right { width : 250px; height : 100px; background : #ffffff; top : 0px; right : 0px; position : absolute;}
+
+.lifemagazine-chat-row-time-left {
+    font: 9px sans-serif;
+    color: #cccccc;
+    text-align: left;
+    margin-left: 48px;
+    width: 60px;
+}
+.lifemagazine-chat-row-time-right {
+    font: 9px sans-serif;
+    color: #cccccc;
+    text-align: right;
+    padding-right: 10px;
+    margin-left: -27px;
+}
+
+.lifemagazine-chat-left-bubble {
+    position: relative;
+    font-size: 11px;
+    font-family: dotum;
+    color: #495863;
+    word-break:break-all;
+    width: 220px;
+    margin-left: 45px;
+    margin-top: -30px;
+    padding-top: 1px;
+    padding-bottom: 1px;
+    padding-left: 10px;
+    padding-right: 3px;
+    background: #F0F0F0;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    border-radius: 5px;
+}
+
+.lifemagazine-chat-left-bubble:after {
+    content: "";
+    position: absolute;
+    top: 8px;
+    left: -10px;
+    border-top: 5px solid #F0F0F0;
+    border-right: 5px solid #F0F0F0;
+    border-bottom: 5px solid transparent;
+    border-left: 5px solid transparent;
+    display: block;
+    width: 0;
+    z-index: 1;
+}
+
+.lifemagazine-chat-right-bubble {
+    position: relative;
+    font-size: 11px;
+    font-family: dotum;
+    word-break:break-all;
+    color: #ffffff;
+    width: 220px;
+    padding-top: 1px;
+    padding-bottom: 1px;
+    padding-left: 10px;
+    padding-right: 3px;
+    background: #04B0F0;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    border-radius: 5px;
+}
+
+.lifemagazine-chat-right-bubble:after {
+    content: "";
+    position: absolute;
+    top: 8px;
+    right: -10px;
+    border-top: 5px solid #04B0F0;
+    border-right: 5px solid transparent;
+    border-bottom: 5px solid transparent;
+    border-left: 5px solid #04B0F0;
+    display: block;
+    width: 0;
+    z-index: 1;
+}
+
+.lifemagazine-chat-talktext {
+    max-width: 220px;
+    margin: 0px;
+    font-size: 90%;
+    /*font-size: 10px;*/
+    font-family: dotum;
+}
+
+.lifemagazine-chat-p {
+/*    margin-top: 6px;
+    margin-bottom: 6px;*/
+    margin: 0px;
+    font-size: 11px;
+    font-family: dotum;
+    text-align: left;
+}
+
+
+
+/*.lifemagazine-chat-left-img {
+    width: 30px; height: 30px; background : #a7b7c2;
+    margin: 0px;
+    padding: 0px;
+   -webkit-border-radius: 4px;
+    -webkit-border-radius: 4px;
+}*/
+
+.lifemagazine-chat-left-img {
+    position: absolute;
+    border: 0px;
+    left: 10px;
+    top: 0px;
+    background : #a7b7c2;
+    width: 30px;
+    height: 30px;
+    -webkit-border-radius: 4px;
+    -webkit-border-radius: 4px;
+}
+
+.lifemagazine-chat-left-div {
+    position: relative;
+    /*border: 1px solid #727377;*/
+    padding-right: 100px;
+    text-align: left;
+    /*background : #eeeeee;*/
+}
+
+.lifemagazine-chat-right-div {
+    position: relative;
+    /*border: 1px solid #727377;*/
+    padding-left: 80px;
+    padding-right: 15px;
+    text-align: right;
+    /*background : #eeeeee;*/
+}
+
+.lifemagazine-chat-left-more-div {
+    position: relative;
+    /*border: 1px solid #727377;*/
+    padding-right: 50px;
+    /*padding-top: 10px;*/
+    text-align: left;
+    /*background : #eeeeee;*/
+}
+
+.lifemagazine-chat-right-more-div {
+    position: relative;
+    /*border: 1px solid #727377;*/
+    padding-left: 80px;
+    /*padding-top: 10px;*/
+    padding-right: 15px;
+    text-align: right;
+    /*background : #eeeeee;*/
+}
+
+
+.lifemagazine-chat-left-div :after {
+    content: "";
+    position: absolute;
+    top: 8px;
+    left: 42px;
+    border-top: 4px solid #e5f2fc;
+    border-right: 4px solid #e5f2fc;
+    border-bottom: 4px solid transparent;
+    border-left: 4px solid transparent;
+    display: block;
+    width: 0;
+    z-index: 100;
+}
+
+.lifemagazine-chat-right-div :after {
+    content: "";
+    position: absolute;
+    top: 8px;
+    right: 8px;
+    border-top: 4px solid #04B0F0;
+    border-right: 4px solid transparent;
+    border-bottom: 4px solid transparent;
+    border-left: 4px solid #04B0F0;
+    display: block;
+    width: 0;
+    z-index: 100;
+}
+
+.lifemagazine-chat-left-more-div :after {
+    content: "";
+    position: absolute;
+    top: 8px;
+    left: 42px;
+    border-top: 4px solid #e5f2fc;
+    border-right: 4px solid #e5f2fc;
+    border-bottom: 4px solid transparent;
+    border-left: 4px solid transparent;
+    display: block;
+    width: 0;
+    z-index: 100;
+}
+
+.lifemagazine-chat-right-more-div :after {
+    content: "";
+    position: absolute;
+    top: 8px;
+    right: 8px;
+    border-top: 4px solid #04B0F0;
+    border-right: 4px solid transparent;
+    border-bottom: 4px solid transparent;
+    border-left: 4px solid #04B0F0;
+    display: block;
+    width: 0;
+    z-index: 100;
+}
+
+.lifemagazine-chat-left-p {
+    line-height: 1.5;
+    font-size: 11px;
+    font-family: dotum;
+    color: #495863;
+
+    -webkit-box-sizing: border-box; /* Safari, other WebKit */
+    -moz-box-sizing: border-box;    /* Firefox, other Gecko */
+    box-sizing: border-box;         /* Opera/IE 8+ */
+    background : #e5f2fc;
+    padding: 10px;
+    width: 100%;
+    max-width: 250px;
+    display: block;
+    overflow: hidden;
+    text-align: left;
+
+    -ms-word-break: break-all;
+    word-break: break-all;
+    word-wrap:break-word;
+    /* Non standard for webkit */
+    word-break: break-word;
+    -webkit-hyphens: auto;
+    -moz-hyphens: auto;
+    -ms-hyphens: auto;
+    hyphens: auto;
+
+    margin-left: 50px;
+    margin-bottom: 0px;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    border-radius: 5px 5px 5px 5px;
+}
+
+.lifemagazine-chat-right-p {
+    line-height: 1.5;
+    font-size: 11px;
+    font-family: dotum;
+    color: #ffffff;
+
+    -webkit-box-sizing: border-box; /* Safari, other WebKit */
+    -moz-box-sizing: border-box;    /* Firefox, other Gecko */
+    box-sizing: border-box;         /* Opera/IE 8+ */
+    background : #04B0F0;
+    padding: 10px;
+    width: 100%;
+    max-width: 250px;
+    display: block;
+    overflow: hidden;
+    text-align: left;
+
+    -ms-word-break: break-all;
+    word-break: break-all;
+    word-wrap:break-word;
+    /* Non standard for webkit */
+    word-break: break-word;
+    -webkit-hyphens: auto;
+    -moz-hyphens: auto;
+    -ms-hyphens: auto;
+    hyphens: auto;
+
+    margin-bottom: 0px;
+
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    border-radius: 5px 5px 5px 5px;
+}
+
+.lifemagazine-chat-span-left {
+    line-height: 1.5;
+    font-size: 11px;
+    font-family: dotum;
+    color: #495863;
+
+    /*border: 1px solid #727377;*/
+    background : #e5f2fc;
+    padding: 10px;
+    margin-left: 50px;
+    /*margin-top: 3px;*/
+    /*margin-bottom: 10px;*/
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    border-radius: 5px 5px 5px 5px;
+}
+
+.lifemagazine-chat-span-left-guest {
+    line-height: 1.5;
+    font-size: 11px;
+    font-family: dotum;
+    color: #495863;
+
+    /*border: 1px solid #727377;*/
+    background : #e5f2fc;
+    padding: 10px;
+    margin-left: 50px;
+    margin-top: 6px;
+    /*margin-bottom: 10px;*/
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    border-radius: 5px 5px 5px 5%;
+}
+
+.lifemagazine-chat-span-right {
+    line-height: 1.5;
+    font-size: 11px;
+    font-family: dotum;
+    color: #ffffff;
+
+    /*border: 1px solid #727377;*/
+    background : #04B0F0;
+    padding: 10px;
+    margin-top: 3px;
+    /*margin-bottom: 10px;*/
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    border-radius: 5px 5px 5px 5px;
+    text-align: left;
+}
+
+.lifemagazine-chat-space-p-left {
+    line-height: 1.0;
+    font: 9px sans-serif;
+    color: #a7b7c2;
+
+    background : white;
+    /*border: 1px solid #727377;*/
+    margin-top: 0px;
+    margin-left: 50px;
+    padding-top: 3px;
+    padding-left: 0px;
+    padding-bottom: 0px;
+}
+
+.lifemagazine-chat-space-p-right {
+    line-height: 1.0;
+    font: 9px sans-serif;
+    color: #a7b7c2;
+
+    background : white;
+    /*border: 1px solid #727377;*/
+    text-align: right;
+    padding-top: 3px;
+    padding-bottom: 0px;
+    margin-top: 0px;
+}
+
+.lifemagazine-chat-space-more-p-left {
+    line-height: 1.0;
+    font: 9px sans-serif;
+    color: #a7b7c2;
+
+    background : white;
+    /*border: 1px solid #727377;*/
+    margin-left: 50px;
+    margin-top: 0px;
+    padding-top: 3px;
+    padding-bottom: 0px;
+    /*margin-top: 0px;*/
+}
+
+.lifemagazine-chat-space-more-p-right {
+    line-height: 1.0;
+    font: 9px sans-serif;
+    color: #a7b7c2;
+
+    background : white;
+    /*border: 1px solid #727377;*/
+    text-align: right;
+    padding-top: 3px;
+    padding-bottom: 0px;
+    margin-top: 0px;
+}
+
+
+.lifemagazine-chat-string-class {
+    padding: 10px;
+    font-family: dotum;
+    font-size: 11px;
+    font-weight: normal;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    border-radius: 5px 5px 5px 5px;
+}

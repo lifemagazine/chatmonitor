@@ -1,0 +1,175 @@
+html, body { width: 100%; height: 100%; margin: 0; padding: 0; font-family: '굴림'}
+
+
+.lifemagazine_msg_modal {
+     width:314px; height:413px; margin:0px; z-index: 1000; /*border: solid 1px #bbbbbb;*/ padding: 0px; overflow: hidden; background: #ffffff;
+    -webkit-border-bottom-left-radius: 5px;
+    -webkit-border-bottom-right-radius: 5px;
+    -moz-border-bottom-left-radius: 5px;
+    -moz-border-bottom-right-radius: 5px;
+}
+.lifemagazine_msg_title { position: relative; top:0px; left: 0px; margin:0px; width:314px; height: 40px; background: #030066; margin: 0px;}
+.lifemagazine_msg_title_label { position:absolute; top: 11px; left: 130px;  margin: 0px; color: #ffffff;  font-size: 90%}
+.lifemagazine_msg_close { position:absolute; top: 7px; right: 20px; }
+
+.lifemagazine_msg_header { position: relative; top:0px; left: 0px; width:314px; height: 61px; margin: 0px; padding: 0px; background: #f5f7fb; }
+.lifemagazine_msg_general_btn {
+    position:absolute; top: 14px; left: 15px; width: 136px; height:31px; background: #04b0f0; border: solid 1px #04b0f0;
+    font-weight: bolder; font-size: 12px; color: #ffffff;
+}
+.lifemagazine_msg_error_btn {
+    position:absolute; top: 14px; left: 163px; width: 136px; height:31px; background: #f5f7fb; border: solid 1px #a7b7c2; cursor: pointer;
+    font-weight: bolder; font-size: 12px; color: #8193a3;
+}
+.lifemagazine_msg_general_btn_reverse {
+    position:absolute; top: 14px; left: 15px; width: 136px; height:31px; background: #ffffff; border: solid 1px #a7b7c2; cursor: pointer;
+    font-weight: bolder; font-size: 12px; color: #8193a3;
+}
+.lifemagazine_msg_error_btn_reverse {
+    position:absolute; top: 14px; left: 163px; width: 136px; height:31px; background: #04b0f0; border: solid 1px #04b0f0;
+    font-weight: bolder; font-size: 12px; color: #ffffff;
+}
+
+.lifemagazine_msg_body {
+    width:314px; height: 355px; margin: 0px; padding-top: 0px;
+    -webkit-border-bottom-left-radius: 5px;
+    -webkit-border-bottom-right-radius: 5px;
+    -moz-border-bottom-left-radius: 5px;
+    -moz-border-bottom-right-radius: 5px;
+}
+.lifemagazine_msg_body_top_label {
+    position: relative;
+    margin:0px; padding: 0px; width:296px; height: 50px;  font-size: 75%;
+}
+.lifemagazine_msg_body_top_label_1 {
+    position:absolute; top: 11px; left: 15px;
+    font: 12px 나눔고딕; font-weight: bold; color: #112971;
+}
+.lifemagazine_msg_body_top_label_2 {
+    position:absolute; top: 11px; left: 190px;
+    font: 12px 나눔고딕; color: #112971;
+}
+.lifemagazine_msg_body_top_label_3 {
+    position:absolute; top: 27px; left: 15px;
+    font: 12px 나눔고딕; color: #112971;
+}
+
+.lifemagazine_msg_body_name {
+    position: relative; left: 15px; margin: 0px;
+    width:282px; height: 31px; border: solid 1px #bbbbbb;
+}
+.lifemagazine_msg_body_name_label {
+    /*position: absolute; top: 7px; left: 5px;*/
+    font: 12px 나눔고딕; font-weight: bold; color: #112971;
+}
+.lifemagazine_msg_body_name_input {
+    position: absolute; top: 0px; left: 50px; width: 220px; height: 29px; border: 0px;
+    font: 12px 나눔고딕; color: #112971; font-family: Sans-serif;
+}
+.lifemagazine_msg_body_middle {
+    position: relative; left: 15px; margin: 0px; padding: 0px;
+    width:282px; height: 26px;
+}
+.lifemagazine_msg_body_middle_label {
+    position: absolute; top: 10px;
+    font: 11px 나눔고딕; color: #7e868e; word-spacing: 1px;
+}
+
+.lifemagazine_msg_body_email {
+    position: relative; left: 15px; margin:0px; width:282px; height: 31px; border: solid 1px #bbbbbb;
+}
+.lifemagazine_msg_body_email_label {
+    /*position: absolute; top: 7px; left: 5px;*/
+    font: 12px 나눔고딕; font-weight: bold; color: #112971;
+}
+.lifemagazine_msg_body_email_input {
+    position: absolute; top: 0px; left: 52px;  width: 214px; height: 29px; border: 0px;
+    font: 12px 나눔고딕; color: #112971; font-family: Sans-serif;
+}
+
+.lifemagazine_msg_body_phone {
+    position: relative; left: 15px; margin:0px; width:282px; height: 31px; border: solid 1px #bbbbbb; margin-top: 8px;
+}
+.lifemagazine_msg_body_phone_label {
+    /*position: absolute; top: 7px; left: 5px;*/
+     font: 12px 나눔고딕; font-weight: bold; color: #112971;
+}
+.lifemagazine_msg_body_phone_input {
+    position: absolute; top: 0px; left: 64px;  width: 202px; height: 29px; border: 0px;
+    font: 12px 나눔고딕; color: #112971;
+}
+
+.lifemagazine_msg_body_msg {
+    position: relative; left: 15px; margin:0px; width:282px; height: 94px; border: solid 1px #bbbbbb; margin-top: 15px;
+}
+.lifemagazine_msg_body_msg_input {
+    position: absolute; top: 0px; left: 0px; width: 100%; height: 100%; border: 0px;
+    padding: 5px;
+    font: 12px 나눔고딕; color: #112971; font-family: Sans-serif;
+    resize:none;
+}
+
+.lifemagazine_msg_body_submit {
+    position: relative; top: 9px; left: 15px; width:284px; height: 35px; margin: 0px;
+}
+.lifemagazine_msg_body_submit_btn {
+    position: absolute; top: 0px; left: 0px; margin:0px; padding:0px;
+    width:284px; height: 33px; background: #030066; border: solid 1px #003399; color: #ffffff;
+    font: 14px 나눔고딕; font-weight: bold; color: #ffffff;
+    cursor: pointer;
+    -webkit-border-bottom-left-radius: 2px;
+    -webkit-border-bottom-right-radius: 2px;
+    -moz-border-bottom-left-radius: 2px;
+    -moz-border-bottom-right-radius: 2px;
+    border-radius: 2px;
+}
+
+
+
+.lifemagazine_msg_error_dataerror {
+    position: relative; left: 15px; margin: 0px;
+    width:278px; height: 50px; border: solid 2px #d0d4d7; margin-top: 0px;
+    cursor: pointer;
+}
+.lifemagazine_msg_error_label_1 {
+    position:absolute; top: 5px; width: 100%;
+    font: 18px 나눔고딕; font-weight: bold; color: #000000; text-align: center;
+}
+.lifemagazine_msg_error_label_2 {
+    position:absolute; top: 30px; width: 100%;
+    font: 11px 나눔고딕; color: #495863; text-align: center;
+}
+
+.lifemagazine_msg_error_viewerror {
+    position: relative; left: 15px; margin: 0px;
+    width:278px; height: 50px; border: solid 2px #d0d4d7; margin-top: 15px;
+    cursor: pointer;
+}
+
+.lifemagazine_msg_error_othererror {
+    position: relative; left: 15px; margin: 0px;
+    width:278px; height: 50px; border: solid 2px #d0d4d7; margin-top: 15px;
+    cursor: pointer;
+}
+
+.lifemagazine_msg_selected_error {
+    position: relative; left: 15px; margin: 0px;
+    width:278px; height: 50px; border: solid 2px #aad7ed; margin-top: 0px;
+    cursor: pointer;
+}
+
+.lifemagazine_msg_body_dummy {
+    position: relative; left: 15px; margin: 0px;
+    width:278px; height: 52px;
+}
+
+.lifemagazine_msg_error_msg {
+    position: relative; left: 15px; margin: 0px;
+    width:282px; height: 173px; border: solid 1px #d0d4d7; margin-top: 15px;
+}
+.lifemagazine_msg_error_msg_input {
+    position: absolute; top: 0px; left: 0px; width: 100%; height: 100%; border: 0px;
+    padding: 5px;
+    font: 12px 나눔고딕; color: #112971;
+    resize:none;
+}
