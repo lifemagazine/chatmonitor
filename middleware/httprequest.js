@@ -1,8 +1,7 @@
 const http = require('http');
 const keepAliveAgent = new http.Agent({keepAlive: true});
 
-// usage
-// var httpRequest = require('../httpRequest');
+module.exports.requestHttpPost = requestHttpPost;
 
 function requestHttpPost(pathInfo, args) {
     return new Promise((resolve, reject) => {
