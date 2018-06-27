@@ -15,7 +15,9 @@ var io = require('socket.io'),
 	ChatDashboard = 'chatdashboard',
 	nameSpaceWebChat = '/webchat',
 	nameSpaceInnerChat = '/innerchat',
-	nameSpaceWebEvent = '/webevent';
+	nameSpaceWebEvent = '/webevent',
+	httpRequest = require('../middleware/httprequest'),
+	pathInfo = {host: config.chatbotHost, port: config.chatbotPort, path: config.chatbotPath};
 
 var socketAuth = function socketAuth(socket, next) {
 	var handshakeData = socket.request;
@@ -162,10 +164,48 @@ var webChatSocketConnection = function webChatSocketConnection(socket, eventSock
 			models.User(socket.request.user.id, socket.request.user.displayName, socket.request.user.provider, chat.room, socket.request.user.role));
 		console.log('************************');
 		console.log(newChat);
+
 		redisChat.addChat(newChat);
 		socket.broadcast.to(chat.room).emit('AddChat', newChat);
 		io.of(nameSpaceInnerChat).emit('AddChat', newChat);
 		socket.emit('AddChat', newChat);
+
+		if (newChat.user.role != 'consultant') {
+			var args = {
+			    ID : newChat.user.id,
+			    TEXT : newChat.message
+			};
+
+			httpRequest.requestHttpPost(pathInfo, args)
+				.then(function(data) {
+					var chatbotAnswer = newChat;
+					var json = JSON.parse(data);
+					chatbotAnswer.ts = Date.now();
+					chatbotAnswer.id = 'admin' + chatbotAnswer.ts;
+					chatbotAnswer.message = json.TEXT;
+					chatbotAnswer.contentLength = -1;
+					chatbotAnswer.user.id = 'admin';
+					chatbotAnswer.user.role = 'consultant';
+
+					redisChat.addChat(chatbotAnswer);
+					socket.broadcast.to(chat.room).emit('AddChat', chatbotAnswer);
+					io.of(nameSpaceInnerChat).emit('AddChat', chatbotAnswer);
+					socket.emit('AddChat', chatbotAnswer);
+				}).catch(function(err) {
+					var chatbotAnswer = newChat;
+					chatbotAnswer.ts = Date.now();
+					chatbotAnswer.id = 'admin' + chatbotAnswer.ts;
+					chatbotAnswer.message = 'Sorry. I am not ready.';
+					chatbotAnswer.contentLength = -1;
+					chatbotAnswer.user.id = 'admin';
+					chatbotAnswer.user.role = 'consultant';
+					
+					redisChat.addChat(chatbotAnswer);
+					socket.broadcast.to(chat.room).emit('AddChat', chatbotAnswer);
+					io.of(nameSpaceInnerChat).emit('AddChat', chatbotAnswer);
+					socket.emit('AddChat', chatbotAnswer);
+				});
+		}
 	});
 
 	socket.on('GetRoom', function() {

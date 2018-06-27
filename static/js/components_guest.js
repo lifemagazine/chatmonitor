@@ -110,6 +110,10 @@ var ChatMessage = React.createClass({
     // console.log(message + '] length: ' + contentLength);
     var contentLength = this.props.chat.get('contentLength');
 
+    if (contentLength == -1) {
+      contentLength = webchatutility.getContentWidth(message);
+    }
+
     var msgLines = message.split("<br>");
     var newLineCount = msgLines.length;
 
