@@ -30,10 +30,10 @@ function requestHttpPost(pathInfo, args) {
             });
             res.on('end', function(){
                 // console.log('Res of '+pathInfo.path+' is End.');
-                let jsonResult = null;
+                var jsonResult = null;
                 try{
                     jsonResult = JSON.parse(jsonObjs);
-                    console.log(jsonResult);
+                    // console.log(jsonResult);
                 }catch(err){
                     reject(err);
                     return;
