@@ -171,6 +171,12 @@ var webChatSocketConnection = function webChatSocketConnection(socket, eventSock
 		socket.emit('AddChat', newChat);
 
 		if (newChat.user.role != 'consultant') {
+			var pathInfo = {
+				host: config.chatbotHost,
+				port: config.chatbotPort,
+				path: config.chatbotPath
+			};
+
 			var args = {
 			    ID : newChat.user.id,
 			    TEXT : newChat.message
