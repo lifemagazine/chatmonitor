@@ -181,14 +181,13 @@ var webChatSocketConnection = function webChatSocketConnection(socket, eventSock
 			    ID : newChat.user.id,
 			    TEXT : newChat.message
 			};
-
+			console.log(pathInfo);
 			httpRequest.requestHttpPost(pathInfo, args)
 				.then(function(data) {
 					var chatbotAnswer = newChat;
-					var json = JSON.parse(data);
 					chatbotAnswer.ts = Date.now();
 					chatbotAnswer.id = 'admin' + chatbotAnswer.ts;
-					chatbotAnswer.message = json.TEXT;
+					chatbotAnswer.message = data.TEXT;
 					chatbotAnswer.contentLength = -1;
 					chatbotAnswer.user.id = 'admin';
 					chatbotAnswer.user.role = 'consultant';
@@ -198,6 +197,7 @@ var webChatSocketConnection = function webChatSocketConnection(socket, eventSock
 					io.of(nameSpaceInnerChat).emit('AddChat', chatbotAnswer);
 					socket.emit('AddChat', chatbotAnswer);
 				}).catch(function(err) {
+					console.log(err)
 					var chatbotAnswer = newChat;
 					chatbotAnswer.ts = Date.now();
 					chatbotAnswer.id = 'admin' + chatbotAnswer.ts;
