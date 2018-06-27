@@ -184,18 +184,36 @@ var webChatSocketConnection = function webChatSocketConnection(socket, eventSock
 			console.log(pathInfo);
 			httpRequest.requestHttpPost(pathInfo, args)
 				.then(function(data) {
-					var chatbotAnswer = newChat;
-					chatbotAnswer.ts = Date.now();
-					chatbotAnswer.id = 'admin' + chatbotAnswer.ts;
-					chatbotAnswer.message = data.TEXT;
-					chatbotAnswer.contentLength = -1;
-					chatbotAnswer.user.id = 'admin';
-					chatbotAnswer.user.role = 'consultant';
+					if (Array.isArray(data.TEXT)) {
+						var len = data.TEXT.length;
+						for (var i=0; i<len; i++) {
+							var chatbotAnswer = newChat;
+							chatbotAnswer.ts = Date.now();
+							chatbotAnswer.id = 'admin' + chatbotAnswer.ts;
+							chatbotAnswer.message = data.TEXT[i];
+							chatbotAnswer.contentLength = -1;
+							chatbotAnswer.user.id = 'admin';
+							chatbotAnswer.user.role = 'consultant';
 
-					redisChat.addChat(chatbotAnswer);
-					socket.broadcast.to(chat.room).emit('AddChat', chatbotAnswer);
-					io.of(nameSpaceInnerChat).emit('AddChat', chatbotAnswer);
-					socket.emit('AddChat', chatbotAnswer);
+							redisChat.addChat(chatbotAnswer);
+							socket.broadcast.to(chat.room).emit('AddChat', chatbotAnswer);
+							io.of(nameSpaceInnerChat).emit('AddChat', chatbotAnswer);
+							socket.emit('AddChat', chatbotAnswer);
+						}
+					} else {
+						var chatbotAnswer = newChat;
+						chatbotAnswer.ts = Date.now();
+						chatbotAnswer.id = 'admin' + chatbotAnswer.ts;
+						chatbotAnswer.message = data.TEXT;
+						chatbotAnswer.contentLength = -1;
+						chatbotAnswer.user.id = 'admin';
+						chatbotAnswer.user.role = 'consultant';
+
+						redisChat.addChat(chatbotAnswer);
+						socket.broadcast.to(chat.room).emit('AddChat', chatbotAnswer);
+						io.of(nameSpaceInnerChat).emit('AddChat', chatbotAnswer);
+						socket.emit('AddChat', chatbotAnswer);
+					}
 				}).catch(function(err) {
 					console.log(err)
 					var chatbotAnswer = newChat;

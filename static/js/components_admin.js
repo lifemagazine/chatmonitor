@@ -85,10 +85,14 @@ var ChatList = React.createClass({
 var ChatMessage = React.createClass({
   render: function() {
     var timeAgo = moment(this.props.chat.get('ts')).format('h:mm:ss a');
-    var message = this.props.chat.get('message');
-    // message = message.replace(new RegExp('\r?\n','g'), '<br>');
+    var message = this.props.chat.get('message') + '';
+    message = message.replace(new RegExp('\r?\n','g'), '<br>');
     // var contentLength = getContentWidth(message);
     var contentLength = this.props.chat.get('contentLength');
+
+    if (contentLength == -1) {
+      contentLength = webchatutility.getContentWidth(message);
+    }
 
     // console.log(message + '] length: ' + contentLength);
 
