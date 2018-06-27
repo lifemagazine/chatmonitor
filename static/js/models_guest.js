@@ -21,7 +21,7 @@ var SocketListener = function SocketListener(noun, collection, socket, refColls)
         collection.add(collection.parse(models));
 
         if (WebChatConfig.chatWinLoaded) {
-          parent.postMessage("msg","http://demo.webmsg.com");
+          parent.postMessage("msg","http://demo.webmsg.com:8888");
         }
       }
       if (type == 'Room') {
