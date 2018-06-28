@@ -2,8 +2,8 @@ var passUtil = require('./password');
 
 var Users = {
 	admin: {
-		salt: 'G811JERghovMoUX5+RoasvwT7evsK1QTL33jc5pjG0w=',
-		password: 'DAq+sDiEbIR0fHnbzgKQCOJ9siVCL6FmXKAI6mX7UY=',
+		salt: 'G81lJERghovMoUX5+RoasvwT7evsK1QTL33jc5pjG0w=',
+		password: 'DAq+sDiEbIR0fHnbzgKQCOJ9siV5CL6FmXKAI6mX7UY=',
 		work: 5000,
 		displayName: 'admin',
 		id: 'admin',

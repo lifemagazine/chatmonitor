@@ -49,11 +49,11 @@ function index(req, res){
 };
 
 function login(req, res){
-	res.render('login', {title: 'Login', message: req.flash('error')});
+	res.render('login', {title: 'Login', message: req.flash('error'), layout: 'layout2'});
 };
 
 function register(req, res){
-	res.render('register', {title: 'Register', message: req.flash('error')});
+	res.render('register', {title: 'Register', message: req.flash('error'), layout: 'layout2'});
 };
 
 function registerProcess(req, res){
