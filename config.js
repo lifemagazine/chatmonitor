@@ -27,7 +27,6 @@ var config = {
         chatbotHost: 'sw.uos.ac.kr',
         chatbotPort: 8080,
         chatbotPath: '/Chatbot',
-        chatbotTimeout: 5000,
         crypto: {
                 workFactor: 5000,
                 keylen: 32,

@@ -3,20 +3,20 @@ const keepAliveAgent = new http.Agent({keepAlive: true});
 
 module.exports.requestHttpPost = requestHttpPost;
 
-function requestHttpPost(pathInfo, args, timeout) {
+function requestHttpPost(pathInfo, args) {
     return new Promise((resolve, reject) => {
         var input = JSON.stringify(args);
         var options = {
             host: pathInfo.host,
             port: pathInfo.port,
             path: pathInfo.path,
+            timeout: 10000,
             method: 'POST',
             headers: {
                 //'Content-Type': 'application/x-www-form-urlencoded',
                 'Content-Type': 'application/json',
                 'Content-Length': Buffer.byteLength(input)
-            },
-            timeout: timeout
+            }
         };
         options.agent = keepAliveAgent;
         var jsonObjs='';
