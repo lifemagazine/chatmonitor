@@ -11,6 +11,7 @@ passport.use(new local(function(username, password, done) {
 		if(profile) {
 			passwordUtils.passwordCheck(password, profile.password, profile.salt, profile.work, function(err,isAuth) {
 				if (isAuth) {
+					console.log(profile.work + ", " + config.crypto.workFactor)
 					if (profile.work < config.crypto.workFactor) {
 						user.updatePassword(username, password, config.crypto.workFactor);
 					}
