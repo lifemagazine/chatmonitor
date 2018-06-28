@@ -18,15 +18,36 @@ var db = new Datastore({ filename: './nedb.db', autoload: true });
 
 var findByUsername = function findByUsername(username, cb) {
 	// cb(null, Users[username]);
-	db.find({ id: username }, function(err, user) {
-		cb(null, user[0]);
+	db.find({ id: username }, function(err, users) {
+		cb(null, users[0]);
 	})
 };
 
 var addUser = function addUser(username, password, work, cb) {
-	if (Users[username] === undefined) {
+	db.find({ id: username }, function(err, users) {
+		if (users.length == 0) {
+			passUtil.passwordCreate(password, function(err, salt, password) {
+				var user = {
+					salt: salt,
+					password: password,
+					work, work,
+					displayname: username,
+					id: username,
+					provider: 'local',
+					username: username,
+					role: 'consultant'
+				};
+				db.insert(user, function(err, newUser) {
+					return cb(null, newUser);
+				})
+			});
+		} else {
+			return cb({errorCode: 1, message: 'User exists!'}, 'User exists!', null);
+		}
+	});
+	/*if (Users[username] === undefined) {
 		passUtil.passwordCreate(password, function(err, salt, password) {
-			/*Users[username] = {
+			Users[username] = {
 				salt: salt,
 				password: password,
 				work, work,
@@ -36,24 +57,11 @@ var addUser = function addUser(username, password, work, cb) {
 				username: username,
 				role: 'consultant'
 			};
-			return cb(null, Users[username]);*/
-			var user = {
-				salt: salt,
-				password: password,
-				work, work,
-				displayname: username,
-				id: username,
-				provider: 'local',
-				username: username,
-				role: 'consultant'
-			};
-			db.insert(user, function(err, newUser) {
-				return cb(null, newUser);
-			})
+			return cb(null, Users[username]);
 		});
 	} else {
 		return cb({errorCode: 1, message: 'User exists!'}, 'User exists!', null);
-	}
+	}*/
 };
 
 var updatePassword = function(username, password, work) {
