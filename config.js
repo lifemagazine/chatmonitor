@@ -12,6 +12,7 @@ var config = {
                 // chatwindowlogin: '/chatwindowlogin',
                 chatwindow: '/chatwindow',
                 msgwindow: '/msgwindow',
+                chatwindowalone: '/chatwindowalone',
                 chatwindowadmin: '/chatwindowadmin',
                 uploadfile: '/uploadfile',
                 removechattingroom: '/removechattingroom',

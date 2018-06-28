@@ -28,6 +28,7 @@ module.exports.login = login;
 module.exports.logOut = logOut;
 module.exports.chat = chat;
 module.exports.chatwindow = chatwindow;
+module.exports.chatwindowalone = chatwindowalone;
 // module.exports.chatwindowlogin = chatwindowlogin;
 module.exports.msgwindow = msgwindow;
 module.exports.chatwindowadmin = chatwindowadmin;
@@ -98,6 +99,11 @@ function chat(req, res){
 function chatwindow(req, res){
 	req.session.touch();
 	res.render('chatwindow', {title: 'Chat Window', webChatAddress: config.host, layout: 'customer_layout'});
+};
+
+function chatwindowalone(req, res){
+	req.session.touch();
+	res.render('chatwindowalone', {title: 'Chat Window Alone', webChatAddress: config.host});
 };
 
 function chatwindowadmin(req, res){

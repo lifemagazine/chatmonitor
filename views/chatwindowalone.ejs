@@ -1,0 +1,48 @@
+
+<link href="/css/lifemagazine.chat.css" rel="stylesheet">
+  <style>
+  label {
+    display: inline-block;
+    width: 5em;
+  }
+  </style>
+<!-- <link rel="stylesheet" href="//code.jquery.com/ui/1.12.0/themes/base/jquery-ui.css">
+<script src="https://code.jquery.com/ui/1.12.0/jquery-ui.js"></script> -->
+<link rel="stylesheet" href="/css/jquery-ui.css">
+<script src="/js/jquery-ui.js"></script>
+<script>
+  var webChatAddress = '<%= webChatAddress %>';
+  console.log('webChatAddress: ' + webChatAddress);
+  var userid = '<%= user.id %>';
+  console.log('userid: ' + userid);
+
+  $(function() {
+
+    //$( ".lifemagazine-chat-modal" ).draggable();
+
+    $(".lifemagazine-chat-inactive-bar").click(function() {
+      $('.lifemagazine-chat-inactive-bar').hide();
+      $('.lifemagazine-chat-modal').show("fast", function() {
+
+      });
+    });
+
+    $("#closechating").click(function() {
+      $('.lifemagazine-chat-modal').hide();
+      $('.lifemagazine-chat-inactive-bar').show("fast", function() {
+
+      });
+    });
+
+    $( document ).tooltip();
+
+  });
+
+</script>
+
+<div id="react-root" class="lifemagazine-chat-modal" style="display: block;"></div>
+<script src="/js/jquery-ui.min.js"></script>
+<script type="text/javascript" src="/js/utility.js"></script>
+<script type="text/javascript" src="/js/models_guest.js"></script>
+<script type="text/javascript" src="/js/components_guest.js"></script>
+<script type="text/javascript" src="/js/chat_guest.js"></script>

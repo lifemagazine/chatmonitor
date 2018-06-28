@@ -74,6 +74,7 @@ app.get(config.routes.consultingmodify, [util.requireAuthentication], routes.con
 // app.post(config.routes.inquiry, routes.inquiry);
 // app.post(config.routes.errorreport, routes.errorreport);
 app.get(config.routes.chatwindow,routes.chatwindow);
+app.get(config.routes.chatwindowalone,routes.chatwindowalone);
 
 //app.get(config.routes.test, routes.test);
 // app.post(config.routes.posttest, routes.posttest);
