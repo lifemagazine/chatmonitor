@@ -182,7 +182,7 @@ var webChatSocketConnection = function webChatSocketConnection(socket, eventSock
 			    TEXT : newChat.message
 			};
 			console.log(pathInfo);
-			httpRequest.requestHttpPost(pathInfo, args)
+			httpRequest.requestHttpPost(pathInfo, args, config.chatbotTimeout)
 				.then(function(data) {
 					if (Array.isArray(data.TEXT)) {
 						var len = data.TEXT.length;
