@@ -14,9 +14,6 @@ passport.use(new local(function(username, password, done) {
 				if (isAuth) {
 					if (profile.work > config.crypto.workFactor) {
 						user.updatePassword(username, password, 1);
-					} else {
-						profile.work = profile.work + 1;
-						// update work value ...
 					}
 					done(null, profile);
 				} else {
