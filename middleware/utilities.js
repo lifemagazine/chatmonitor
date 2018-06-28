@@ -148,8 +148,8 @@ exports.authenticated = function authenticated(req, res, next) {
 };
 
 exports.requireAuthentication = function requireAuthentication(req, res, next){
-    // console.log('requireAuthentication -> ' + JSON.stringify(req.session));
-    // console.log('requireAuthentication req.session.passport.user.role ->' + req.session.passport.user.role);
+    console.log('requireAuthentication -> ' + JSON.stringify(req.session));
+    console.log('requireAuthentication req.session.passport.user.role ->' + req.session.passport.user.role);
 	if (req.session.isAuthenticated && req.session.passport.user.role != undefined && req.session.passport.user.role == 'consultant') {
 		next();
 	}else {

@@ -36,7 +36,7 @@ passport.deserializeUser(function(user, done) {
 
 var routes = function routes(app){
 	app.post(config.routes.login, passport.authenticate('local',
-		{successRedirect: '/nooo', failureRedirect: config.routes.login, failureFlash: true}));
+		{successRedirect: '/chat', failureRedirect: config.routes.login, failureFlash: true}));
 };
 
 exports.passport = passport;
