@@ -19,7 +19,7 @@ var db = new Datastore({ filename: './nedb.db', autoload: true });
 var findByUsername = function findByUsername(username, cb) {
 	// cb(null, Users[username]);
 	db.find({ username: username }, function(err, user) {
-		cb(null, Users[username]);
+		cb(null, user);
 	})
 };
 
