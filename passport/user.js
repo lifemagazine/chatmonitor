@@ -8,7 +8,8 @@ var Users = {
 		displayName: 'admin',
 		id: 'admin',
 		provider: 'local',
-		username: 'admin'
+		username: 'admin',
+		role: 'consultant'
 	}
 };
 
