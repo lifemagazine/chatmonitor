@@ -1,0 +1,23 @@
+<html>
+<head>
+<title>Test</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <script>
+        function popupChatWindow() {
+          var userName = prompt("Please enter your name", "kbmember");
+          if (userName == null) {
+            userName = "kbmember";
+          }
+          var tokenValue = 'd3d3LnRyYWRsaW54LmNvbQ==';
+          var url = 'http://www.webmsg.com:8080/checksession?username=' + userName + '&mode=alone' + '&token='+tokenValue;
+
+          window.open(url,'','height=450,width=316,top=100,left=100,directories=no,titlebar=no,toolbar=no,location=no,status=no,menubar=no,scrollbars=yes,resizable=no');
+        }
+      </script>
+</head>
+<body>
+<div class="container" style="position:relative;width:1400px; height:100%; background-image:url('images/main.png');" onclick="javascript:popupChatWindow()" style="cursor:pointer">
+</div>
+
+</body>
+</html>
