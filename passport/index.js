@@ -8,6 +8,7 @@ var passport = require('passport'),
 passport.use(new local(function(username, password, done) {
 	console.log('username: ' + username + ', password: ' + password);
 	user.findByUsername(username, function(err, profile) {
+		console.log(profile);
 		if(profile) {
 			passwordUtils.passwordCheck(password, profile.password, profile.salt, profile.work, function(err,isAuth) {
 				if (isAuth) {
