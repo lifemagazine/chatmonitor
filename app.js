@@ -6,7 +6,7 @@ var express = require('express'),
 	log = require('./middleware/log'),
 	cookieParser = require('cookie-parser'),
 	bodyParser = require('body-parser'),
-	csrf = require('csurf'),
+	// csrf = require('csurf'),
 	session = require('express-session'),
 	RedisStore = require('connect-redis')(session),
 	util = require('./middleware/utilities'),
@@ -45,8 +45,8 @@ app.use(passport.passport.initialize());
 app.use(passport.passport.session());
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({extended: false}));
-app.use(csrf());
-app.use(util.csrf);
+// app.use(csrf());
+// app.use(util.csrf);
 app.use(util.authenticated);
 app.use(flash());
 app.use(util.templateRoutes);
