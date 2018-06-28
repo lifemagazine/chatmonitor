@@ -7,7 +7,7 @@ var config = {
         routes: {
                 login: '/account/login',
                 logout: '/account/logout',
-
+                register: '/account/register',
                 chat: '/chat',
                 // chatwindowlogin: '/chatwindowlogin',
                 chatwindow: '/chatwindow',

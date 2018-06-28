@@ -58,8 +58,8 @@ app.post(config.routes.secondlogin, routes.secondlogin);
 
 app.get(config.routes.login, routes.login);
 app.get(config.routes.logout, routes.logOut);
-// app.get(config.routes.register, routes.register);
-// app.post(config.routes.register, routes.registerProcess);
+app.get(config.routes.register, routes.register);
+app.post(config.routes.register, routes.registerProcess);
 app.get(config.routes.chat, [util.requireAuthentication], routes.chat);
 app.get(config.routes.chatwindowadmin, [util.requireAuthentication], routes.chatwindowadmin);
 // app.get(config.routes.chatwindowlogin,routes.chatwindowlogin);
