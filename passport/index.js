@@ -10,7 +10,7 @@ passport.use(new local(function(username, password, done) {
 	user.findByUsername(username, function(err, profile) {
 		if(profile) {
 			passwordUtils.passwordCheck(password, profile.password, profile.salt, profile.work, function(err,isAuth) {
-				console.log('passwordCheck: ' isAuth);
+				console.log('passwordCheck: ' + isAuth);
 				if (isAuth) {
 					if (profile.work > config.crypto.workFactor) {
 						user.updatePassword(username, password, 1);
