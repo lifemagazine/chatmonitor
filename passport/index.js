@@ -11,9 +11,11 @@ passport.use(new local(function(username, password, done) {
 		if(profile) {
 			passwordUtils.passwordCheck(password, profile.password, profile.salt, profile.work, function(err,isAuth) {
 				if (isAuth) {
-					console.log(profile.work + ", " + config.crypto.workFactor)
-					if (profile.work < config.crypto.workFactor) {
-						user.updatePassword(username, password, config.crypto.workFactor);
+					if (profile.work > config.crypto.workFactor) {
+						user.updatePassword(username, password, 1);
+					} else {
+						profile.work = profile.work + 1;
+						// update work value ...
 					}
 					done(null, profile);
 				} else {
@@ -36,7 +38,7 @@ passport.deserializeUser(function(user, done) {
 
 var routes = function routes(app){
 	app.post(config.routes.login, passport.authenticate('local',
-		{successRedirect: '/', failureRedirect: config.routes.login, failureFlash: true}));
+		{successRedirect: '/chat', failureRedirect: config.routes.login, failureFlash: true}));
 };
 
 exports.passport = passport;
