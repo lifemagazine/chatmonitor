@@ -6,9 +6,8 @@ var passport = require('passport'),
 	log = require('../middleware/log');
 
 passport.use(new local(function(username, password, done) {
-	console.log('username: ' + username + ', password: ' + password);
+	// console.log('username: ' + username + ', password: ' + password);
 	user.findByUsername(username, function(err, profile) {
-		console.log(profile);
 		if(profile) {
 			passwordUtils.passwordCheck(password, profile.password, profile.salt, profile.work, function(err,isAuth) {
 				if (isAuth) {
@@ -17,7 +16,6 @@ passport.use(new local(function(username, password, done) {
 					}
 					done(null, profile);
 				} else {
-					console.log({message: 'Wrong Username or Password', username: username});
 					done(null, false, {message: 'Wrong Username or Password'});
 				}
 			});
