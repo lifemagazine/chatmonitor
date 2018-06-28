@@ -243,8 +243,9 @@ function checkconsultantcount(req, res) {
 function checksession(req, res) {
 	//  http://inner.lifemagazine.com/checksession?username=echo1234&token=d3d3LnRyYWRsaW54LmNvbQ==
 	var username = req.query.username;
+	var mode = req.query.mode;
 	var sessionToken = req.query.token;
-	console.log('username: ' + username + ', token: ' + sessionToken);
+	console.log('username: ' + username + ', token: ' + sessionToken + ', mode: ' + mode);
 	if (util.checkInValidToken(sessionToken)) {
 		console.log('token is valid');
 		req.session.isAuthenticated = true;
@@ -260,9 +261,12 @@ function checksession(req, res) {
 				var  usersP = redisChat.getUsersinRoom(consultantRoomName);
 				usersP.done(function(users) {
 					console.log('Consultant count in ' + consultantRoomName + ': ' + users.length);
-					var chatAddr = config.host + '/chatwindow#room/';
+					var chatwindowpage = '/chatwindow#room/';
+					if (mode != null && mode == 'alone')
+						chatwindowpage = '/chatwindowalone#room/';
+					var chatAddr = config.host + chatwindowpage;
 					if (users.length > 0) {
-						var chatAddr = config.host + '/chatwindow#room/';
+						var chatAddr = config.host + chatwindowpage;
 						res.redirect(chatAddr + username);
 						console.log(chatAddr + username);
 					} else {
