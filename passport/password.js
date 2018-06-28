@@ -17,8 +17,8 @@ var passwordCreate = function passwordCreate(password, cb) {
 var passwordCheck = function passwordCheck(password, derivedPassword, salt, work, cb) {
 	console.log(derivedPassword);
 	crypto.pbkdf2(password, salt, work, config.crypto.keylen, function(err, key) {
-		if (err != null) console.log(err);
-		else console.log('key => ' + key);
+		// if (err != null) console.log(err);
+		// else console.log('key => ' + key);
 		cb(null, scmp(key.toString('base64'), derivedPassword));
 	});
 };

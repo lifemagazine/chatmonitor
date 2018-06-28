@@ -10,7 +10,7 @@ passport.use(new local(function(username, password, done) {
 	user.findByUsername(username, function(err, profile) {
 		if(profile) {
 			passwordUtils.passwordCheck(password, profile.password, profile.salt, profile.work, function(err,isAuth) {
-				console.log('username: ' + username + ', password: ' + password + ' => passwordCheck: ' + isAuth);
+				// console.log('username: ' + username + ', password: ' + password + ' => passwordCheck: ' + isAuth);
 				if (isAuth) {
 					if (profile.work > config.crypto.workFactor) {
 						user.updatePassword(username, password, 1);
@@ -36,7 +36,7 @@ passport.deserializeUser(function(user, done) {
 
 var routes = function routes(app){
 	app.post(config.routes.login, passport.authenticate('local',
-		{successRedirect: '/chat', failureRedirect: config.routes.login, failureFlash: true}));
+		{successRedirect: '/nooo', failureRedirect: config.routes.login, failureFlash: true}));
 };
 
 exports.passport = passport;
