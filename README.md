@@ -1,7 +1,7 @@
 # chatmonitor
 Chatting monitor
 
-<Features>
+Features
 0. The system is made up of node and redis.<br>
 1. It provides tow types of chatting window.<br>
 2. One is popup window style and another is embeded style.<br>
@@ -10,7 +10,7 @@ Chatting monitor
 <br>
 <br>
 
-<Installation>
+Installation
 0. Install node.js 4.x.<br>
 1. Install redis.<br>
 2. Configure config.js.<br>
