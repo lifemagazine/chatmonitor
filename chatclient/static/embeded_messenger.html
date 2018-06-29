@@ -1,0 +1,41 @@
+<html>
+<head>
+<title>Test</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <link rel="stylesheet" href="/css/cosmo.min.css">
+    <link rel="stylesheet" href="/css/style.css">
+    <link rel="stylesheet" href="/css/jquery-ui.min.css">
+    <link rel="stylesheet" href="/css/tradlinx.chat.css">
+    <script type="text/javascript" src="/scripts/jquery-1.12.4.min.js"></script>
+    <script type="text/javascript" src="/scripts/jquery-ui.min.js"></script>
+    <!-- <script type="text/javascript" src="/scripts/tradlinx.js"></script> -->
+    
+    <script type="text/javascript" src="/scripts/es5-shim.js"></script>
+    <script type="text/javascript" src="/scripts/es5-sham.js"></script>
+    <script type="text/javascript" src="/scripts/html5shiv.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/1.4.8/socket.io.js"></script>
+    <script type="text/javascript" src="/scripts/tradlinx_chat.js"></script>
+
+</head>
+<body>
+
+<link href="/css/bootstrap.min.css" rel="stylesheet">
+
+
+
+<div class="container" style="position:relative;width:1400px; height:100%; background-image:url('images/main.png');">
+</div>
+
+<div class="footer">
+    <script>
+      var userName = prompt("Please enter your name", "kbmember");
+      if (userName == null) {
+        userName = "kbmember";
+      }
+      webchat_init('footer');
+      callCheckSession(userName, null, null, null);
+    </script>
+</div>
+
+</body>
+</html>
