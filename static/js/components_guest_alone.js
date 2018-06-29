@@ -109,12 +109,15 @@ var ChatList = React.createClass({
 });
 
 var ChatMessage = React.createClass({
-  goodClick: function() {
-    sendGoodFeedback();
+  goodClick: function(msgId) {
+    sendGoodFeedback(this.props.chat);
   },
-  badClick: function() {
-    sendBadFeedback();
+  badClick: function(msgId) {
+    sendBadFeedback(this.props.chat.get('id'));
   },
+  callClick: function(msgId) {
+    consultantCall(this.props.chat.get('id'));
+  }
   render: function() {
     var timeAgo = moment(this.props.chat.get('ts')).format('h:mm:ss a');
     var message = this.props.chat.get('message') + '';
@@ -155,6 +158,7 @@ var ChatMessage = React.createClass({
               React.DOM.p({className: 'lifemagazine-chat-space-p-left'}, timeAgo),
               React.DOM.button({className: 'lifemagazine-chat-good-feedback-p-left', onClick: this.goodClick}, 'Good'),
               React.DOM.button({className: 'lifemagazine-chat-bad-feedback-p-left', onClick: this.badClick}, 'Bad'),
+              React.DOM.button({className: 'lifemagazine-chat-call-feedback-p-left', onClick: this.badClick}, 'Call'),
               UserView({user: this.props.chat.get('user'), size: 30, useName: true})
             )
           );
@@ -184,6 +188,7 @@ var ChatMessage = React.createClass({
               React.DOM.p({className: 'lifemagazine-chat-space-more-p-left-2'}, timeAgo),
               React.DOM.button({className: 'lifemagazine-chat-good-feedback-p-left', onClick: this.goodClick}, 'Good'),
               React.DOM.button({className: 'lifemagazine-chat-bad-feedback-p-left', onClick: this.badClick}, 'Bad'),
+              React.DOM.button({className: 'lifemagazine-chat-call-feedback-p-left', onClick: this.badClick}, 'Call'),
               UserView({user: this.props.chat.get('user'), size: 30, useName: true})
             )
           );
