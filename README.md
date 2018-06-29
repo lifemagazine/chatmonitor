@@ -8,7 +8,7 @@ Chatting monitor
 3. The chating dash board shows chat events like new user or new message in real time.<br>
 4. This use embedded NoSql, nedb.<br>
 
-<Installation and run>
+<Installation>
 0. Install node.js 4.x.<br>
 1. Install redis.<br>
 2. Configure config.js.<br>
