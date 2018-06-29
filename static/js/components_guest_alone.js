@@ -110,10 +110,10 @@ var ChatList = React.createClass({
 
 var ChatMessage = React.createClass({
   goodClick: function() {
-    alert('send good feedback');
+    sendGoodFeedback();
   },
   badClick: function() {
-    alert('send bad feedback');
+    sendBadFeedback();
   },
   render: function() {
     var timeAgo = moment(this.props.chat.get('ts')).format('h:mm:ss a');
@@ -181,7 +181,7 @@ var ChatMessage = React.createClass({
                     return React.DOM.p({className: 'lifemagazine-chat-p'}, line);
                   })
               ),
-              React.DOM.p({className: 'lifemagazine-chat-space-more-p-left'}, timeAgo),
+              React.DOM.p({className: 'lifemagazine-chat-space-more-p-left-2'}, timeAgo),
               React.DOM.button({className: 'lifemagazine-chat-good-feedback-p-left', onClick: this.goodClick}, 'Good'),
               React.DOM.button({className: 'lifemagazine-chat-bad-feedback-p-left', onClick: this.badClick}, 'Bad'),
               UserView({user: this.props.chat.get('user'), size: 30, useName: true})
