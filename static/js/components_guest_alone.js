@@ -109,6 +109,12 @@ var ChatList = React.createClass({
 });
 
 var ChatMessage = React.createClass({
+  goodClick: function() {
+    alert('send good feedback');
+  },
+  badClick: function() {
+    alert('send bad feedback');
+  },
   render: function() {
     var timeAgo = moment(this.props.chat.get('ts')).format('h:mm:ss a');
     var message = this.props.chat.get('message') + '';
@@ -147,7 +153,8 @@ var ChatMessage = React.createClass({
                 })
               ),
               React.DOM.p({className: 'lifemagazine-chat-space-p-left'}, timeAgo),
-              React.DOM.p({className: 'lifemagazine-chat-feedback-p-left'}, 'Good | Bad'),
+              React.DOM.button({className: 'lifemagazine-chat-good-feedback-p-left', onClick: this.goodClick}, 'Good'),
+              React.DOM.button({className: 'lifemagazine-chat-bad-feedback-p-left', onClick: this.badClick}, 'Bad'),
               UserView({user: this.props.chat.get('user'), size: 30, useName: true})
             )
           );
@@ -175,7 +182,8 @@ var ChatMessage = React.createClass({
                   })
               ),
               React.DOM.p({className: 'lifemagazine-chat-space-more-p-left'}, timeAgo),
-              React.DOM.p({className: 'lifemagazine-chat-feedback-more-p-left'}, 'Good | Bad'),
+              React.DOM.button({className: 'lifemagazine-chat-good-feedback-p-left', onClick: this.goodClick}, 'Good'),
+              React.DOM.button({className: 'lifemagazine-chat-bad-feedback-p-left', onClick: this.badClick}, 'Bad'),
               UserView({user: this.props.chat.get('user'), size: 30, useName: true})
             )
           );
