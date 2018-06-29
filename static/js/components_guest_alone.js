@@ -147,6 +147,7 @@ var ChatMessage = React.createClass({
                 })
               ),
               React.DOM.p({className: 'lifemagazine-chat-space-p-left'}, timeAgo),
+              React.DOM.p({className: 'lifemagazine-chat-space-p-left'}, 'Good | Bad'),
               UserView({user: this.props.chat.get('user'), size: 30, useName: true})
             )
           );
@@ -174,6 +175,7 @@ var ChatMessage = React.createClass({
                   })
               ),
               React.DOM.p({className: 'lifemagazine-chat-space-more-p-left'}, timeAgo),
+              React.DOM.p({className: 'lifemagazine-chat-space-more-p-left'}, 'Good | Bad'),
               UserView({user: this.props.chat.get('user'), size: 30, useName: true})
             )
           );
