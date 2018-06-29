@@ -110,7 +110,7 @@ var ChatList = React.createClass({
 
 var ChatMessage = React.createClass({
   goodClick: function(msgId) {
-    sendGoodFeedback(this.props.chat);
+    sendGoodFeedback(this.props.chat.get('id'));
   },
   badClick: function(msgId) {
     sendBadFeedback(this.props.chat.get('id'));
