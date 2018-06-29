@@ -117,7 +117,7 @@ var ChatMessage = React.createClass({
   },
   callClick: function(msgId) {
     consultantCall(this.props.chat.get('id'));
-  }
+  },
   render: function() {
     var timeAgo = moment(this.props.chat.get('ts')).format('h:mm:ss a');
     var message = this.props.chat.get('message') + '';
