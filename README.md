@@ -6,7 +6,8 @@ Chatting monitor
 1. It provides tow types of chatting window.<br>
 2. One is popup window style and another is embeded style.<br>
 3. The chating dash board shows chat events like new user or new message in real time.<br>
-4. This use embedded NoSql, nedb.<br>
+4. This use embedded NoSql, nedb.
+
 
 <Installation>
 0. Install node.js 4.x.<br>
