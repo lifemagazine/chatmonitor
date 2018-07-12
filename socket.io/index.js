@@ -178,7 +178,9 @@ var webChatSocketConnection = function webChatSocketConnection(socket, eventSock
 			};
 
 			var args = {
+				TYPE: 'Request',
 			    ID : newChat.user.id,
+			    MESSAGE_ID : newChat.user.id + '_ts',
 			    TEXT : newChat.message
 			};
 			console.log(pathInfo);
