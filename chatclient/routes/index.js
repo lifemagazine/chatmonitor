@@ -1,11 +1,15 @@
 
 var router = function (app) {
-	app.post("/chatbot", function(req, res) {
-		var query = req.body.query;
-		console.log('query => ' + query);
-		var answer = chatbot(query);
-		console.log('answer => ' + answer);
-		res.status(200).send(answer);
+	app.post("/Chatbot", function(req, res) {
+		// var query = req.body.query;
+		// console.log('query => ' + query);
+		// var answer = chatbot(query);
+		// console.log('answer => ' + answer);
+		// res.status(200).send(answer);
+		setTimeout(function() {
+			var answer = chatbot('Noise');
+			res.status(200).send(answer);
+		}, 3000);
 	});
 }
 
@@ -17,7 +21,7 @@ function chatbot(query) {
 		var arrayOfStrings = query.split(' ');
 		result = 'Hello ' + arrayOfStrings[0] + ', nice to meet you.';
 	}
-	var data = { ok: 'true', value: result};
+	var data = { ok: 'true', TEXT: result};
 	return JSON.stringify(data);
 }
 
