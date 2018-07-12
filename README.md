@@ -12,7 +12,10 @@ Features<br>
 
 Installation and Run<br>
 0. Install node.js 4.x.<br>
-1. Install redis.<br>
-2. Configure config.js.<br>
-3. Execute command in the application root, node app.js.<br>
-4. The chatclient folder has samples of client usages. ex) popup window chatting or embedded window chatting.<br>
+1. npm install.<br>
+2. npm install bower -g<br>
+3. bower install<br>
+4. Install redis.<br>
+5. Configure config.js.<br>
+6. Execute command in the application root, node app.js.<br>
+7. The chatclient folder has samples of client usages. ex) popup window chatting or embedded window chatting.<br>
