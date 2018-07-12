@@ -9,7 +9,7 @@ var router = function (app) {
 		setTimeout(function() {
 			var answer = chatbot('Noise');
 			res.status(200).send(answer);
-		}, 3000);
+		}, 7000);
 	});
 }
 
