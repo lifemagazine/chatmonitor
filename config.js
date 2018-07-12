@@ -26,7 +26,7 @@ var config = {
         host: 'http://www.webmsg.com:8080',
         webChatAddress: 'http://www.webmsg.com:8080/webchat',
         chatbotHost: 'sw.uos.ac.kr',
-        chatbotPort: 8080,
+        chatbotPort: 800,
         chatbotPath: '/Chatbot',
         crypto: {
                 workFactor: 5000,

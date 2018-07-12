@@ -25,7 +25,7 @@ function requestHttpPost(pathInfo, args) {
             // console.log('Res HEADERS of '+pathInfo.path+' : '+JSON.stringify(res.headers));
             res.setEncoding('utf8');
             res.on('data', function (chunk) {
-                // console.log('Res data of '+pathInfo.path+' is '+chunk.toString('urf-8'));
+                console.log(chunk.toString('urf-8'));
                 jsonObjs = jsonObjs + chunk.toString('urf-8');
             });
             res.on('end', function(){
@@ -41,6 +41,7 @@ function requestHttpPost(pathInfo, args) {
                 resolve(jsonResult);
             });
             res.on('error', function (error) {
+                console.log('ERROR: ' + error.message);
                 reject(error);
             });
         });
